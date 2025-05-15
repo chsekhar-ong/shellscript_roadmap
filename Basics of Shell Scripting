@@ -11,6 +11,11 @@ echo "Hello, World!"
 :wq! #this saves the files edited
 =======================
 
+Edit Permissions:
+=======================
+  chmod 771 demo.sh
+=======================
+
 output : 
 ------------------------------------
      Hello, World!
