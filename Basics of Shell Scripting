@@ -1,0 +1,21 @@
+=========================
+   Write the Script
+=========================
+vi demo.sh 
+
+#!/bin/bash
+# This is a comment
+echo "Hello, World!"
+
+ --->click Escape 
+:wq! #this saves the files edited
+=======================
+
+output : 
+------------------------------------
+     Hello, World!
+------------------------------------
+#!/bin/bash → Tells the system this is a Bash script.(Here #! is called shebang (or hashbang) )
+# → Lines starting with # are comments (ignored).
+
+--->  echo → Prints text to the screen.
