@@ -1,0 +1,28 @@
+-->Types of Shell
+---------------------------------------------------
+---/bin/sh(bourne shell), /bin/bash(bourne again shell), /bin/dash(Debian Almquist Shell), /bin/csh(c shell), /bin/ksh(korn shell),/bin/zsh(z shell)
+---------------------------------------------------
+
+
+
+------------------------
+|    Applications      | ← User-level programs (e.g., browsers, editors, etc.)
+|=========="===========|
+|        Shell         | ← Interface between user and OS (CLI or GUI)
+|======================|
+|       Kernal         | ← Core part of the OS (manages resources and system calls)------>| Process management, Memory management,Device management,File system handling,System calls |
+|======================|
+|       Hardware       | ← Physical components (CPU, memory, I/O devices)
+------------------------
+
+
+
+-----***----- How It All Works Together: -----***------
+==============================================================================
+A user runs a program from the shell.
+
+The shell converts the request into system calls to the kernel.
+
+The kernel accesses the necessary hardware resources to fulfill the request.
+
+The result travels back up the layers to the user.
