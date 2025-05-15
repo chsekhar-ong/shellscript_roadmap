@@ -10,9 +10,9 @@
 |=========="===========|
 |        Shell         | ← Interface between user and OS (CLI or GUI)
 |======================|
-|       Kernal         | ← Core part of the OS (manages resources and system calls)------>| Process management, Memory management,Device management,File system handling,System calls |
+|       Kernal         | ← Core part of the OS (manages resources and system calls)------>|   Process management, Memory management,Device management,File system handling,System calls   |
 |======================|
-|       Hardware       | ← Physical components (CPU, memory, I/O devices)
+|       Hardware       | ← Physical components (CPU, memory, I/O devices) --->  |  CPU, RAM,Disk drives,Network cards  |
 ------------------------
 
 
