@@ -1,0 +1,53 @@
+Create a small shell script, myvar2.sh:
+===================================================
+myvar2.sh
+#!/bin/sh
+echo "MYVAR is: $MYVAR"
+MYVAR="hi there"
+echo "MYVAR is: $MYVAR"
+===================================================
+
+Now run the script:
+============================================
+$ ./myvar2.sh
+MYVAR is:
+MYVAR is: hi there
+MYVAR hasn't been set to any value, so it's blank. Then we give it a value, and it has the expected result.
+Now run:
+
+$ MYVAR=hello
+$ ./myvar2.sh
+MYVAR is:
+MYVAR is: hi there
+============================================
+
+
+It's still not been set! What's going on?!
+----->When you call myvar2.sh from your interactive shell, a new shell is spawned to run the script. This is partly because of the #!/bin/sh line at the start of the script, which we discussed earlier.
+We need to export the variable for it to be inherited by another program - including a shell script. Type:
+-------------------------------------------------------
+$ export MYVAR
+$ ./myvar2.sh
+MYVAR is: hello
+MYVAR is: hi there
+Now look at line 3 of the script: this is changing the value of MYVAR. But there is no way that this will be passed back to your interactive shell. Try reading the value of MYVAR:
+-------------------------------------------------------
+$ echo $MYVAR
+hello
+$
+Once the shell script exits, its environment is destroyed. But MYVAR keeps its value of hello within your interactive shell.
+In order to receive environment changes back from the script, we must source the script - this effectively runs the script within our own interactive shell, instead of spawning another shell to run it.
+We can source a script via the "." (dot) command:
+-------------------------------------------------
+$ MYVAR=hello
+$ echo $MYVAR
+hello
+-------------------------------------------------
+$ . ./myvar2.sh
+MYVAR is: hello
+MYVAR is: hi there
+$ echo $MYVAR
+hi there
+The change has now made it out into our shell again! This is how your .profile or .bash_profile file works, for example.
+Note that in this case, we don't need to export MYVAR.
+An easy mistake to make is to say echo MYVAR instead of echo $MYVAR - unlike most languages, the dollar ($) symbol is required when getting the value of a variable, but must not be used when setting the value of the variable
